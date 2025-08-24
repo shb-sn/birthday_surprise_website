@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 1 — Time Machine to Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family:'Poppins',sans-serif;
+      background: linear-gradient(135deg,#fecf78,#f9ab5e,#f69826);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:2rem;
+      position:relative;
+      overflow-x:hidden;
+    }
+
+    header {
+      text-align:center;
+      margin-bottom:2rem;
+    }
+
+    header h1 {
+      font-family:'Dancing Script',cursive;
+      font-size:3.5rem;
+      color:#4d2507;
+      margin-bottom:0.5rem;
+    }
+
+    header p {
+      font-style:italic;
+      color:#7e3200;
+      font-size:1.2rem;
+    }
+
+    .scrapbook {
+      width: 90vw;
+      max-width: 800px;
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+    }
+
+    .page {
+      display:flex;
+      flex-direction:row;
+      gap:2rem;
+      background: rgb(231, 147, 45);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      box-shadow:0 10px 40px rgba(0,0,0,0.15);
+      align-items:center;
+      transition: opacity 0.5s ease;
+    }
+
+    .page img {
+      width: 40%;
+      aspect-ratio: 4/5;
+      object-fit:cover;
+      border-radius:1rem;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .text {
+      width: 60%;
+      display:flex;
+      flex-direction:column;
+      gap:0.5rem;
+    }
+
+    .text h3 {
+      font-family:'Dancing Script',cursive;
+      font-size:2rem;
+      color:#62300d;
+      margin:0;
+    }
+
+    .text p {
+      font-size:1rem;
+      color:#362418;
+      line-height:1.5;
+      margin:0;
+    }
+
+    .hidden { display:none; }
+
+    .nav-btn {
+      margin-top:1rem;
+      padding:0.5rem 1.5rem;
+      border-radius:9999px;
+      background:#a34e26;
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .nav-btn:hover { background:#7b3f1c; }
+
+    .floating-doodle {
+      position: fixed;
+      font-size: 1.5rem;
+      animation: floatDoodle 4s ease-in-out infinite;
+      pointer-events: none;
+      user-select: none;
+      z-index: 999;
+    }
+
+    @keyframes floatDoodle {
+      0% { transform: translateY(0) rotate(0deg); opacity:1; }
+      50% { transform: translateY(-50px) rotate(15deg); opacity:0.7; }
+      100% { transform: translateY(-100px) rotate(-15deg); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Day 1 — Our Scrapbook</h1>
+  <p>“Every memory, every laugh, every little moment… captured here.”</p>
+</header>
+
+<div class="scrapbook">
+
+  <div class="page" id="page0">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/first_meet.jpg" alt="Memory 1">
+    <div class="text">
+      <h3>First Meet ❤️</h3>
+      <p>How longed for that first meeting. And when we met how we nervously held hands. My heart still races thinking about it.</p>
+      <p>💖✨ That moment felt like the start of everything.</p>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page1">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/first_day_out.jpg" alt="Memory 2">
+    <div class="text">
+      <h3>First Day Out in Public 🌸</h3>
+      <p>The first day we roamed in public, shyly enjoying each other’s company. Later, our cozy cafe date made it perfect.</p>
+      <p>💌💖 Every laugh and glance was magical.</p>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page2">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/first_trip.jpg" alt="Memory 3">
+    <div class="text">
+      <h3>First Trip Together ✈️</h3>
+      <p>We faced so many problems and cried, but ultimately laughed, and enjoyed every moment together (and had great sex too!).</p>
+      <p>✨💖 Memories of this trip will stay forever.</p>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page3">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/cozy_cuddles.jpg" alt="Memory 4">
+    <div class="text">
+      <h3>Cozy Cuddles 🌙</h3>
+      <p>I loved the nights we held each other, skin to skin, feeling each other’s warmth and comfort as we fell asleep together.</p>
+      <p>💖💌 Those moments felt like home.</p>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page4">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/first_flower.jpg" alt="Memory 5">
+    <div class="text">
+      <h3>First Flowers 🌷</h3>
+      <p>When you gave me flowers for the first time, struggling to find the shop and making the bouquet in front of me. I loved it so much!</p>
+      <p>✨💖 A simple gesture, but unforgettable.</p>
+    </div>
+  </div>
+
+  <div class="page hidden" id="page5">
+    <img src="C:/Users/singh/Downloads/Rahul bday/assets/day1_assets/late_night_talks.jpg" alt="Memory 6">
+    <div class="text">
+      <h3>Late Night Talks 💌</h3>
+      <p>All those long video calls and late-night conversations, sharing everything for hours. I miss those days when time felt endless.</p>
+      <p>💖✨ Every word with you was precious.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="flex justify-center mt-6 space-x-4">
+  <button class="nav-btn" id="prevBtn">← Previous</button>
+  <button class="nav-btn" id="nextBtn">Next →</button>
+</div>
+
+<!-- Back Button -->
+    <a href="index.html" class="block mt-8 text-orange-700 hover:text-orange-600">← Back to Home</a>
+
+<script>
+  const pages = document.querySelectorAll('.page');
+  let current = 0;
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    pages[current].classList.add('hidden');
+    current = (current + 1) % pages.length;
+    pages[current].classList.remove('hidden');
+  });
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    pages[current].classList.add('hidden');
+    current = (current - 1 + pages.length) % pages.length;
+    pages[current].classList.remove('hidden');
+  });
+
+  // Floating Doodles
+  const doodleChars = ['💖','✨','🌸','💌','🌹','💫'];
+  for(let i=0; i<15; i++) {
+    const doodle = document.createElement('span');
+    doodle.className='floating-doodle';
+    doodle.textContent = doodleChars[Math.floor(Math.random()*doodleChars.length)];
+    doodle.style.left=Math.random()*90+'%';
+    doodle.style.top=Math.random()*80+'%';
+    document.body.appendChild(doodle);
+    setInterval(()=>{
+      doodle.style.left=Math.random()*90+'%';
+      doodle.style.top=Math.random()*80+'%';
+    },4000);
+  }
+</script>
+
+</body>
+</html>

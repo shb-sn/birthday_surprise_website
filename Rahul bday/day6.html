@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 6 — You're the Star</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Poppins',sans-serif;}
+    .glass {background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);box-shadow:0 4px 30px rgba(0,0,0,0.3);}
+    .hidden {display:none;}
+  </style>
+</head>
+<body class="bg-gradient-to-br from-red-900 via-black to-red-700 text-white min-h-screen flex flex-col items-center justify-center px-6 py-10">
+
+  <header class="text-center mb-10">
+    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-yellow-500" style="font-family:'Dancing Script',cursive">Day 6 — My Spidey</h1>
+    <p class="mt-3 text-gray-300 italic">“With great power comes great love... and great surprises!”</p>
+  </header>
+
+  <main class="max-w-3xl glass rounded-2xl p-8 text-center">
+    <!-- Movie Clip -->
+    <div class="mb-6">
+      <video id="movieClip" class="w-full rounded-lg" autoplay muted loop>
+        <source src="C:\Users\singh\Downloads\Rahul bday\assets\day6_assets\spiderman.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button id="unmuteBtn" class="mt-4 px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300">Unmute & Enjoy</button>
+    </div>
+
+    <h2 class="text-3xl font-semibold mb-4 text-red-400">Your Friendly Neighborhood Love Story</h2>
+    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+      Today is all about the hero you love. The one who swings across skyscrapers and dives into danger — but still has time to steal hearts.
+      Just like him, you’ve got the strength to face anything… and the charm to make every moment amazing.
+    </p>
+
+    <p class="text-gray-400 italic mb-6">Every hero needs a partner in crime — lucky for you, you’ve got the best.</p>
+
+    <!-- Quiz Section -->
+    <div class="bg-gradient-to-br from-red-600 to-black rounded-xl p-6 text-white shadow-lg">
+      <h3 class="text-2xl font-bold mb-4">Movie Quiz:</h3>
+      <p class="mb-4">Answer all 5 questions correctly to unlock your special message!</p>
+      
+      <form id="quizForm" class="space-y-4 text-left">
+        <div>
+          <label class="block mb-1">1. Who played the main character?</label>
+          <input type="text" name="q1" class="w-full rounded px-2 py-1 text-black">
+        </div>
+        <div>
+          <label class="block mb-1">2. Name the villain.</label>
+          <input type="text" name="q2" class="w-full rounded px-2 py-1 text-black">
+        </div>
+        <div>
+          <label class="block mb-1">3. Which city is the movie set in?</label>
+          <input type="text" name="q3" class="w-full rounded px-2 py-1 text-black">
+        </div>
+        <div>
+          <label class="block mb-1">4. Name one iconic scene.</label>
+          <input type="text" name="q4" class="w-full rounded px-2 py-1 text-black">
+        </div>
+        <div>
+          <label class="block mb-1">5. What is the main character's special ability?</label>
+          <input type="text" name="q5" class="w-full rounded px-2 py-1 text-black">
+        </div>
+        <button type="submit" class="mt-4 px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">Submit Answers</button>
+      </form>
+
+      <div id="giftBox" class="hidden mt-6 text-center">
+  <p class="text-xl font-semibold mb-4" style="font-family:'Poppins', sans-serif; color:#FFD580;">
+    🎁 Congratulations! You unlocked a secret movie date!
+  </p>
+  <p class="text-lg font-medium mb-2" style="font-family:'Poppins', sans-serif; color:#FFB347;">
+    Just choose the movie, the food, and the date! 🍿🎬
+  </p>
+  <p class="font-medium mb-2" style="font-family:'Poppins', sans-serif; color:#FFB347;">
+    Can’t wait to watch this together with you — my favorite hero!
+  </p>
+</div>
+
+
+
+
+    </div>
+
+    <a href="index.html" class="block mt-8 text-red-400 hover:text-red-300">← Back to Home</a>
+  </main>
+
+  <script>
+    // Enable sound after button click
+    const video = document.getElementById('movieClip');
+    const unmuteBtn = document.getElementById('unmuteBtn');
+    unmuteBtn.addEventListener('click', () => {
+      video.muted = false;
+      video.play();
+      unmuteBtn.classList.add('hidden');
+    });
+
+    // Quiz checking logic
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const answers = {
+        q1: 'Tom Holland',
+        q2: 'Green Goblin',
+        q3: 'New York',
+        q4: 'Train fight',
+        q5: 'Spider power'
+      };
+
+      const formData = new FormData(this);
+      let allCorrect = true;
+      for (let key in answers) {
+        if ((formData.get(key) || '').trim().toLowerCase() !== answers[key].toLowerCase()) {
+          allCorrect = false;
+          break;
+        }
+      }
+
+      if (allCorrect) {
+        document.getElementById('giftBox').classList.remove('hidden');
+        alert('All answers correct! Gift unlocked!');
+      } else {
+        alert('Some answers are incorrect. Try again!');
+      }
+    });
+  </script>
+
+</body>
+</html>

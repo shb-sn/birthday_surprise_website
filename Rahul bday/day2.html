@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 2 — Sweet Escape</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Poppins',sans-serif;}
+    .glass {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    }
+    .floating-kiss {
+      position: fixed;        /* fixed so kisses float over the viewport */
+      font-size: 1.8rem;
+      animation: floatUp 2s ease-in forwards;
+      pointer-events: none;
+      user-select: none;
+      z-index: 9999;
+    }
+    @keyframes floatUp {
+      0% {opacity:1; transform: translateY(0) scale(1);}
+      50% {transform: translateY(-40px) scale(1.2);}
+      100% {opacity:0; transform: translateY(-80px) scale(1);}
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-rose-200 via-pink-100 to-rose-50 text-gray-900 min-h-screen flex flex-col items-center justify-center px-6 py-10">
+
+  <header class="text-center mb-10">
+    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-400" style="font-family:'Dancing Script',cursive;">Day 2 — Pillow Talk</h1>
+    <p class="mt-3 text-pink-700 italic">“Every whisper from you sets my skin on fire.”</p>
+  </header>
+
+  <main class="max-w-3xl glass rounded-3xl p-8 text-center text-gray-800">
+    <img src="C:\Users\singh\Downloads\Rahul bday\assets\day2_assets\kiss.jpg" alt="Conversation" class="w-80 h-80 object-cover rounded-2xl mx-auto mb-6 shadow-lg">
+    
+    <h2 class="text-3xl font-semibold mb-4 text-rose-600">Our Wildest Moments</h2>
+    <p class="text-lg leading-relaxed mb-6 text-pink-700">
+      Just two bodies, tangled together, hands exploring, lips tracing every secret curve. 
+      Late nights, soft moans, and whispered desires — the kind of heat that makes me ache for you. 
+      That’s what I crave the most, darling.
+    </p>
+    
+    <p class="text-pink-500 italic mb-6">If love had a voice, it would be your breath against my ear, sending shivers down my spine…</p>
+    
+    <!-- Quiz/Game Surprise -->
+    <div class="bg-gradient-to-br from-rose-500 to-pink-400 rounded-2xl p-6 text-white shadow-xl">
+      <h3 class="text-2xl font-bold mb-4">Your Steamy Quiz 💋</h3>
+      <p class="mb-4">How well do you remember our hottest little memories? Answer correctly, and 50 kisses are all yours 😘</p>
+      <p class="mb-4 text-yellow-200 font-semibold">Warning! Things might get naughty 🔥</p>
+      <button id="surpriseBtn" class="px-6 py-3 rounded-full bg-white text-rose-600 font-semibold hover:bg-gray-200 transition">Start Quiz</button>
+      
+      <div id="quizBox" class="hidden mt-6 text-gray-800 text-left">
+        <form id="memoryQuiz" class="space-y-4">
+          <div>
+            <p class="font-semibold text-rose-900">1. Where did we have our first long kiss?</p>
+            <input type="text" name="q1" class="mt-1 p-2 rounded border w-full" placeholder="Type your answer">
+          </div>
+          
+          <div>
+            <p class="font-semibold text-rose-900">2. When did I say I had the best sex with you?</p>
+            <input type="text" name="q2" class="mt-1 p-2 rounded border w-full" placeholder="Type your answer">
+          </div>
+          
+          <div>
+            <p class="font-semibold text-rose-900">3. What's our favourite position?</p>
+            <input type="text" name="q3" class="mt-1 p-2 rounded border w-full" placeholder="Type your answer">
+          </div>
+          
+          <button type="submit" class="mt-4 px-6 py-2 rounded-full bg-rose-700 text-white font-semibold hover:bg-rose-800 transition">Submit Answers</button>
+        </form>
+
+        <p id="quizResult" class="mt-6 text-center text-2xl font-bold text-pink-600"></p>
+      </div>
+    </div>
+    
+    <a href="index.html" class="block mt-8 text-rose-600 hover:text-pink-500">← Back to Home</a>
+  </main>
+
+  <script>
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const quizBox = document.getElementById('quizBox');
+    const memoryQuiz = document.getElementById('memoryQuiz');
+    const quizResult = document.getElementById('quizResult');
+
+    surpriseBtn.addEventListener('click', () => {
+      quizBox.classList.remove('hidden');
+      surpriseBtn.classList.add('hidden');
+    });
+
+    const answers = {
+      q1: ['dimsagar'],
+      q2: ['14 may'],
+      q3: ['doggy', 'missionary']
+    };
+
+    memoryQuiz.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let score = 0;
+      const formData = new FormData(memoryQuiz);
+
+      for(const [key, value] of formData.entries()){
+        const userAnswer = value.trim().toLowerCase();
+        const validAnswers = answers[key].map(ans => ans.toLowerCase());
+        if(validAnswers.includes(userAnswer)) score++;
+      }
+
+      if(score === 3){
+  quizResult.innerHTML = "🔥 Damn, you got them all right! 50 kisses are all yours 💋";
+  quizResult.style.color = "#881337"; // rose-900
+  quizResult.style.fontSize = "1.25rem"; // slightly smaller
+  quizResult.style.fontWeight = "600";
+
+  // Kiss storm
+  const duration = 5000; 
+  const intervalTime = 200; 
+  const startTime = Date.now();
+
+  const kissInterval = setInterval(() => {
+    if(Date.now() - startTime > duration){
+      clearInterval(kissInterval);
+      return;
+    }
+
+    const kiss = document.createElement('span');
+    kiss.className = 'floating-kiss';
+    kiss.textContent = '💋';
+    kiss.style.left = Math.random() * (window.innerWidth - 30) + 'px';
+    kiss.style.top = Math.random() * (window.innerHeight - 30) + 'px';
+    document.body.appendChild(kiss);
+
+    setTimeout(() => kiss.remove(), 2000);
+
+  }, intervalTime);
+
+} else {
+  quizResult.innerHTML = `Almost there, babe 😘 You got ${score}/3 right! Keep those lips ready 💋`;
+  quizResult.style.color = "#881337"; // rose-900
+  quizResult.style.fontSize = "1.25rem";
+  quizResult.style.fontWeight = "500";
+}
+
+    });
+  </script>
+
+</body>
+</html>
+

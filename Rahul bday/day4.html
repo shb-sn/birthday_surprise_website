@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Day 4 — Destination: Happiness</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Poppins',sans-serif}
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+    .reward {
+      font-size: 2rem; 
+      margin-top: 15px;
+      display: inline-block;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-15px) scale(1.1); }
+      100% { transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-900 via-sky-800 to-gray-900 text-white min-h-screen flex flex-col items-center justify-center px-6 py-10" style="background: linear-gradient(135deg, #1e3a8a, #0c4a6e, #1f2937);">
+  
+  <header class="text-center mb-10">
+    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-blue-500" style="font-family:'Dancing Script',cursive">Day 4 — Snowy Peaks</h1>
+    <p class="mt-3 text-gray-300 italic">“Lost in the mountains, found in your eyes.”</p>
+  </header>
+
+  <main class="max-w-3xl glass rounded-2xl p-8 text-center">
+    <img src="C:\Users\singh\Downloads\Rahul bday\assets\day4_assets\skiing.jpg" 
+     alt="Mountains" 
+     class="w-80 h-80 object-cover rounded-lg mx-auto mb-6">
+
+    
+    <h2 class="text-3xl font-semibold mb-4 text-sky-300">Your Heaven on Earth</h2>
+    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+      Snow on the peaks, silence in the air, and just the two of us with endless skies.  
+      I know mountains make you feel alive — strong, free, and infinite.  
+      Today’s surprise is all about that feeling: the one you get when the wind hits your face and you’re on top of the world.
+    </p>
+    <p class="text-gray-400 italic mb-6">If love had a landscape, it would look like snow-capped mountains under a starlit sky.</p>
+
+    <!-- Scavenger Hunt Section -->
+    <div class="bg-gradient-to-br from-blue-700 to-sky-600 rounded-xl p-6 text-white shadow-lg mt-6">
+      <h3 class="text-2xl font-bold mb-4">Mini Scavenger Hunt</h3>
+      <p class="mb-4">Your hint is a map… but it doesn’t have a name. Explore, guess, and solve to reveal a sweet reward from a beautiful place.</p>
+
+      <!-- Map Hint -->
+<div class="flex justify-center mb-6">
+  <img src="C:\Users\singh\Downloads\Rahul bday\assets\day4_assets\map.png"
+       alt="Map Hint" 
+       class="w-80 h-auto rounded-lg">
+</div>
+
+
+      <input type="text" id="placeInput" class="w-full rounded px-3 py-2 text-black mb-4" placeholder="Enter your guess...">
+      <button id="checkPlace" class="px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold hover:bg-yellow-300 transition">Submit Answer</button>
+      
+      <div id="rewardMsg" class="hidden mt-6">
+        <p class="text-2xl mb-4 text-yellow-500">🎉 Congratulations! You found it! 🏔</p>
+        <p class="text-gray-200 text-xl mb-4">
+          Leh-Ladakh awaits in our memories: every adventure we take adds a new peak to our journey together.
+        </p>
+        <p class="text-red-400 text-xl mb-4">
+          And coming to you this evening
+        </p>
+        <div class="reward" style="
+    color: #7B3F00; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.5rem; 
+    text-shadow: 0 0 8px rgba(255, 200, 150, 0.5);
+">
+  🍫 Dairy Milk
+</div>
+
+
+    <!-- Back Button -->
+    <a href="index.html" class="block mt-8 text-sky-400 hover:text-sky-300">← Back to Home</a>
+  </main>
+
+  <script>
+    document.getElementById('checkPlace').addEventListener('click', () => {
+      const answer = document.getElementById('placeInput').value.trim().toLowerCase();
+      if(answer === 'leh' || answer === 'ladakh' || answer === 'leh ladakh') {
+        document.getElementById('rewardMsg').classList.remove('hidden');
+      } else {
+        alert('Not quite! Look carefully at the map and try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
+

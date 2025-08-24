@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>D-Day — Once Upon a You</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family:'Poppins',sans-serif;
+      overflow-x:hidden;
+      background: #f3e9dc url('C:/Users/singh/Downloads/Rahul bday/assets/dday_assets/parchment.jpg') repeat;
+      color: #4b3021;
+    }
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      box-shadow:0 4px 30px rgba(0,0,0,0.3);
+    }
+    .letter-bg {
+  background: #f3e9dc url('C:/Users/singh/Downloads/Rahul bday/assets/dday_assets/letter.jpg') repeat;
+  background-size: cover;
+  color: #563725;
+  padding: 3rem 2.5rem; /* Balanced padding */
+  border: 2px solid #d8b27f;
+  border-radius: 2rem;
+  font-family: 'Great Vibes', cursive;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.letter-signature {
+  font-family: 'Sacramento', cursive !important; /* Force new font */
+  font-size: 2rem !important; /* Huge and elegant */
+  color: #941183 !important; /* Force color */
+  line-height: 1.2 !important;
+  text-align: right !important;
+  display: block;
+}
+
+
+    .letter-content p {
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1s;
+    }
+    @keyframes fadeIn {
+      to {opacity:1;}
+    }
+    button.startBtn {
+      background: #b97a57;
+      color: #fff8e7;
+      font-weight: 600;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      border: 2px solid #8c5a3f;
+      transition: all 0.3s ease;
+    }
+    button.startBtn:hover {
+      background: #a06a45;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    .video-container {
+      border: 12px solid #d8b27f;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      background: #fff4e3;
+      max-width: 1200px;
+      width: 90%;
+      aspect-ratio: 16/9;
+      margin: 2rem auto;
+      padding: 0.5rem;
+    }
+
+    .video-container video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .letter-title {
+      color: #a64d2f;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .letter-text {
+      color: #4b3021;
+    }
+
+    .letter-signature {
+      color: #d2691e;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    /* ✅ Global doodles styling */
+    .doodle {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.75;
+      user-select: none;
+      pointer-events: none;
+      animation: floatUp 10s infinite linear;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    #floatingDoodles {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .gradient-text {
+      background: linear-gradient(45deg, #a53589, #f757ea, #e78012);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center flex-col px-6 py-10 relative">
+
+  <!-- Landing Screen -->
+  <div id="landingScreen" class="text-center relative flex flex-col items-center justify-center min-h-screen px-6 py-10 overflow-hidden">
+    <h2 class="text-2xl italic mb-4 text-pink-700 drop-shadow-lg">You’ve completed the journey. Now comes the destination.</h2>
+    <h1 class="text-6xl md:text-7xl font-bold mb-6 text-pink-500 drop-shadow-lg" style="font-family:'Dancing Script',cursive;">
+      You are my favorite adventure.
+    </h1>
+    <p class="text-xl md:text-2xl mb-4 max-w-2xl text-amber-800 font-semibold">
+      Every step we’ve taken, every smile we’ve shared, has brought us here — to this moment that’s just for us.
+    </p>
+    <p class="text-3xl md:text-4xl mb-8 text-purple-700 italic" style="font-family:'Sacramento',cursive;">
+      Close your eyes, take a deep breath, and get ready for the surprise you deserve.
+    </p>
+    <button id="startBtn" class="startBtn bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+      Start the Surprise ❤️
+    </button>
+  </div>
+
+  <!-- Grand Reveal Screen -->
+<div id="grandReveal" class="hidden flex flex-col items-center justify-center text-center glass rounded-2xl p-8 max-w-5xl mt-6 relative overflow-hidden">
+  <p id="loveLetter" class="text-lg text-amber-900 mb-6 max-w-xl mx-auto z-10"></p>
+  <div class="video-container relative z-10">
+    <video id="bdayVideo" src="C:\Users\singh\Downloads\Rahul bday\assets\dday_assets\bday_video.mp4" controls autoplay loop class="rounded-lg w-full"></video>
+  </div>
+  <button id="finalBtn" class="startBtn mt-4 z-10">Click for One Last Surprise</button>
+</div>
+
+<!-- Floating doodles container (GLOBAL) -->
+<div id="floatingDoodles"></div>
+
+<!-- Ending Screen -->
+<div id="endingScreen" class="hidden flex flex-col items-center justify-center text-center space-y-6 mt-6">
+  <div class="letter-bg letter-content ">
+    <h1 class="letter-title text-5xl font-bold mb-4" style="font-family:'Dancing Script', cursive;">
+      <span class="gradient-text">Happy Birthday, My Love! ❤️</span>
+    </h1>
+    <p class="letter-text mb-2" style="font-family:'Merriweather', cursive;">
+      From the moment our worlds collided, my life became a beautiful melody. Every laugh with you is music, every hug is home, and every glance reminds me why love is the most magical thing in the universe.  
+      You’re not just my favorite chapter—you’re my whole story. 🌸
+    </p>
+    <p class="letter-text mb-2" style="font-family:'Merriweather', cursive;">
+      Today, I wish for your heart to overflow with happiness, for your dreams to bloom like wildflowers, and for us to keep creating memories that feel like fireworks in the night sky.  
+      Thank you for being my calm and my chaos, my partner in crime, and my forever. 💫
+    </p>
+    <p class="letter-text mb-2" style="font-family:'Merriweather', cursive;">
+      Here’s to countless late-night talks, shared playlists, silly jokes, stolen kisses, and endless adventures. You make ordinary days feel like poetry.
+    </p>
+    <p class="letter-signature">
+      With all my love,<br>Your Bubu 💋
+    </p>
+  </div>
+  <a id="giftBtn" href="https://www.greetingsisland.com/ecard/pzcfzl22u30x" target="_blank" class="startBtn bg-pink-600 hover:bg-pink-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105 fade-in mt-6 z-10">Go to Your Gift 🎁 →</a>
+<!-- Back Button -->
+  <a href="index.html" class="block mt-8 text-[#8B4513] hover:text-[#A0522D]">← Back to Home</a>
+</div>
+
+<audio id="endingMusic" src="C:\Users\singh\Downloads\Rahul bday\assets\dday_assets\o_saathi.mp3"></audio>
+
+<script>
+const startBtn = document.getElementById('startBtn');
+const landingScreen = document.getElementById('landingScreen');
+const grandReveal = document.getElementById('grandReveal');
+const loveLetter = document.getElementById('loveLetter');
+const finalBtn = document.getElementById('finalBtn');
+const endingScreen = document.getElementById('endingScreen');
+const endingMusic = document.getElementById('endingMusic');
+const doodleContainer = document.getElementById('floatingDoodles');
+const bdayVideo = document.getElementById('bdayVideo'); // ✅ Added reference to video
+
+const doodleEmojis = ['❤️', '💫', '🌸', '✨', '💌', '😍', '🥰','💕','💖','🌟','💐','🌷','🎁','🎂'];
+
+function createDoodle() {
+  const doodle = document.createElement('div');
+  doodle.classList.add('doodle');
+  doodle.textContent = doodleEmojis[Math.floor(Math.random() * doodleEmojis.length)];
+  doodle.style.left = Math.random() * 100 + 'vw';
+  doodle.style.fontSize = Math.random() * 20 + 24 + 'px';
+  doodle.style.animationDuration = Math.random() * 6 + 8 + 's';
+  doodleContainer.appendChild(doodle);
+  setTimeout(() => {
+    doodle.remove();
+  }, 10000);
+}
+
+setInterval(createDoodle, 700);
+
+const letterLines = [
+  `<span style="color:#FF6F61; font-family:'Dancing Script', cursive; font-size:2.5rem; font-weight:bold;">Happy Birthday, Baby!</span>`,
+  `<span style="color:#8B4513; font-family:'Poppins', sans-serif; font-size:1.25rem; font-weight:500;">Here’s to a lifetime of laughs, songs, and adventures together.</span>`,
+  `<span style="color:#7e147c; font-family:'Sacramento', cursive; font-size:2.25rem;">You mean the world to me ❤️</span>`
+];
+
+startBtn.addEventListener('click', () => {
+  landingScreen.classList.add('hidden');
+  grandReveal.classList.remove('hidden');
+  loveLetter.innerHTML = '';
+  typeLoveLetter(letterLines, loveLetter);
+});
+
+function typeLoveLetter(lines, container) {
+  let lineIndex = 0;
+  function typeLine() {
+    if (lineIndex >= lines.length) return;
+    const lineWrapper = document.createElement('div');
+    lineWrapper.style.marginBottom = '15px';
+    container.appendChild(lineWrapper);
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = lines[lineIndex];
+    const styledSpan = tempDiv.firstChild;
+    const textContent = styledSpan.textContent.trim();
+    styledSpan.textContent = '';
+    lineWrapper.appendChild(styledSpan);
+    let wordIndex = 0;
+    const words = textContent.split(' ');
+    function typeWord() {
+      if (wordIndex < words.length) {
+        styledSpan.textContent += (wordIndex === 0 ? '' : ' ') + words[wordIndex];
+        wordIndex++;
+        setTimeout(typeWord, 250);
+      } else {
+        lineIndex++;
+        setTimeout(typeLine, 600);
+      }
+    }
+    typeWord();
+  }
+  typeLine();
+}
+
+finalBtn.addEventListener('click', () => {
+  grandReveal.classList.add('hidden');
+  endingScreen.classList.remove('hidden');
+  if (endingMusic) {
+    endingMusic.play().catch(err => console.log('Autoplay blocked:', err));
+  }
+  if (bdayVideo) {
+    bdayVideo.pause();      // ✅ Stops the video
+    bdayVideo.currentTime = 0; // ✅ Resets to start
+  }
+});
+</script>
+
+</body>
+</html>

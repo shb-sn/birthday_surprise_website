@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Surprise!!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Poppins',sans-serif}
+    .glass {
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,0.2);
+      box-shadow:0 4px 30px rgba(0,0,0,0.3);
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+    .glass:hover {
+      transform:scale(1.05);
+      box-shadow:0 8px 40px rgba(255,105,180,0.4);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white min-h-screen">
+
+  <header class="max-w-5xl mx-auto py-12 text-center">
+    <h1 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400" style="font-family:'Dancing Script',cursive">Unlock the Week</h1>
+    <p class="mt-3 text-white-300">A new surprise every day — your special day awaits.</p>
+    <div id="timer" class="mt-6 text-3xl font-semibold text-pink-300"></div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pb-20">
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Day 7 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day7.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="bike">
+        <h3 class="text-xl font-semibold">Day 7 — Riding into Forever</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Life is better on two wheels.</p>
+        <a id="btn7" href="day7.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 6 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day6.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="movie">
+        <h3 class="text-xl font-semibold">Day 6 — You're the Star</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Lights. Camera. Love.</p>
+        <a id="btn6" href="day6.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 5 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day5.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="song">
+        <h3 class="text-xl font-semibold">Day 5 — Heartbeats and Melodies</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Feel my love in every note.</p>
+        <a id="btn5" href="day5.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 4 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day4.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="place">
+        <h3 class="text-xl font-semibold">Day 4 — Destination: Happiness</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Take me where love feels endless.</p>
+        <a id="btn4" href="day4.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day3.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="food">
+        <h3 class="text-xl font-semibold">Day 3 — Cooking Up Love</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Sugar, spice and everything nice.</p>
+        <a id="btn3" href="day3.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day2.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="activity">
+        <h3 class="text-xl font-semibold">Day 2 — Sweet Escape</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Just you, me, and magic.</p>
+        <a id="btn2" href="day2.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- Day 1 -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\day1.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="scrapbook">
+        <h3 class="text-xl font-semibold">Day 1 — Time Machine to Us</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Rewind. Relive. Remember us.</p>
+        <a id="btn1" href="day1.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold">Open Surprise</a>
+      </div>
+
+      <!-- D-Day -->
+      <div class="glass rounded-2xl p-6 flex flex-col items-center text-center">
+        <img src="C:\Users\singh\Downloads\Rahul bday\assets\day_profile\dday.jpg" class="w-28 h-28 object-cover rounded-md mb-4" alt="final">
+        <h3 class="text-xl font-semibold">D-Day — Once Upon a You</h3>
+        <p class="text-sm text-gray-300 mt-2 italic">Your heart’s VIP pass.</p>
+        <a id="btnd" href="dday.html" class="mt-4 inline-block px-5 py-2 rounded-full bg-gradient-to-r from-yellow-400 to-pink-500 text-white font-semibold">Open Your Gift</a>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    function getISTDate() {
+      return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    }
+
+    const DDay = new Date('2025-08-24T00:00:00+05:30');
+    const unlockDates = {};
+    for (let i = 1; i <= 7; i++) {
+      unlockDates[i] = new Date(DDay.getTime() - (8 - i) * 24 * 60 * 60 * 1000);
+    }
+
+    function updateCountdown() {
+      const now = getISTDate();
+      const diff = DDay - now;
+
+      const timerEl = document.getElementById('timer');
+      if (diff <= 0) {
+        timerEl.textContent = "It's D-Day!";
+      } else {
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        timerEl.textContent = `D-${days} : ${hours.toString().padStart(2,'0')}h : ${minutes.toString().padStart(2,'0')}m : ${seconds.toString().padStart(2,'0')}s`;
+      }
+
+      for (let i = 1; i <= 7; i++) {
+        const btn = document.getElementById('btn' + i);
+        if (now >= unlockDates[i]) {
+          btn.classList.remove('opacity-40','pointer-events-none');
+        } else {
+          btn.classList.add('opacity-40','pointer-events-none');
+        }
+      }
+
+      const finalBtn = document.getElementById('btnd');
+      if (now >= DDay) {
+        finalBtn.classList.remove('opacity-40','pointer-events-none');
+      } else {
+        finalBtn.classList.add('opacity-40','pointer-events-none');
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
