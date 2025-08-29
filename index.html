@@ -107,7 +107,7 @@
     const DDay = new Date('2025-09-05T00:00:00+05:30');
     const unlockDates = {};
     for (let i = 1; i <= 7; i++) {
-      unlockDates[i] = new Date(DDay.getTime() - (8 - i) * 24 * 60 * 60 * 1000);
+      unlockDates[i] = new Date(DDay.getTime() - i * 24 * 60 * 60 * 1000);
     }
 
     function updateCountdown() {
